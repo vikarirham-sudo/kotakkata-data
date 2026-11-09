@@ -8,6 +8,7 @@ jadi teka-teki baru bisa ditambah **tanpa update aplikasi**.
 | File | Fungsi |
 |---|---|
 | `daily.json` | Semua teka-teki harian, satu per tanggal |
+| `english.json` | Semua level Tebak English (Beginner, Intermediate, Advanced) |
 | `index.html` | Halaman cek: menampilkan versi dan sampai tanggal berapa stoknya |
 | `alat/tambah_harian.py` | Alat untuk membuat teka-teki baru dari daftar kata |
 | `alat/contoh_kata.txt` | Contoh format daftar kata |
@@ -32,3 +33,8 @@ Cara lain: kirim daftar kata ke Claude, minta dibuatkan `daily.json` baru, lalu 
 - Jangan ubah teka-teki untuk **hari ini atau hari yang sudah lewat**. Pemain yang sudah mulai tetap memakai versi lama, jadi hasil antarpemain bisa beda.
 - Jaga stok minimal **30 hari ke depan**. Kalau stok habis, aplikasi otomatis memakai teka-teki cadangan bawaan.
 - Judul spesial (baris `@`) muncul di kartu beranda, misalnya "Spesial: Hari Kemerdekaan".
+
+## Tebak English (`english.json`)
+- Setiap level: `tier` (beginner/intermediate/advanced), `title`, dan `words` berisi `w` (kata Inggris, huruf besar tanpa spasi), `m` (arti), `c` (jenis kata), `x` (contoh kalimat yang memuat kata itu).
+- Tambahkan level baru **di akhir daftar**. Jangan ganti judul level lama, karena progres bintang pemain disimpan berdasarkan tingkat + judul.
+- Setelah diunggah, pemain mendapat level baru saat membuka aplikasi.
