@@ -1,0 +1,5 @@
+<!DOCTYPE html><html lang="id"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kotak Kata – Data</title>
+<style>body{font-family:system-ui,sans-serif;background:#FFF8EE;color:#2A1E14;max-width:520px;margin:40px auto;padding:0 20px;line-height:1.5}code{background:#EADCC8;padding:2px 6px;border-radius:6px}</style></head>
+<body><h1>Kotak Kata</h1><p>Server data untuk TTS Harian di aplikasi Kotak Kata.</p><p id="s">Memuat…</p>
+<script>fetch('daily.json?t='+Date.now()).then(r=>r.json()).then(j=>{const k=Object.keys(j.puzzles).sort();document.getElementById('s').innerHTML=`Versi <code>${j.version}</code> · stok <b>${k.length}</b> teka-teki · sampai <b>${k[k.length-1]}</b>`;}).catch(()=>document.getElementById('s').textContent='daily.json belum bisa dibaca');</script>
+</body></html>
